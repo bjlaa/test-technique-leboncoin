@@ -9,7 +9,8 @@ import SETTINGS from '../../settings';
 
 class App extends Component {
   state = {
-    messages: []
+    messages: [],
+    isCreatingMessage: false
   };
 
   componentDidMount() {
@@ -28,7 +29,8 @@ class App extends Component {
   };
 
   createMessage = (message) => {
-    console.log("boje", message)
+    this.setState({ isCreatingMessage: true });
+
     fetch(
       SETTINGS.createMessageURL,
       {
@@ -42,14 +44,15 @@ class App extends Component {
     )
       .then((response) => {
         if (response.ok) {
-          return response.text();
+          this.fetchMessages();
+          this.setState({ isCreatingMessage: false });
         }
 
         throw new Error('Error in App - createMessage(): error while fetching data');
       })
-      .then(() => {
-        this.fetchMessages();
-      })
+      .catch((error) => {
+
+      });
   };
 
   render() {
@@ -60,7 +63,10 @@ class App extends Component {
         </header>
         <Card>
           <MessageList messages={this.state.messages} />
-          <MessageForm createMessage={this.createMessage} />
+          <MessageForm
+            createMessage={this.createMessage}
+            isCreatingMessage={this.state.isCreatingMessage}
+          />
         </Card>
       </div>
     );

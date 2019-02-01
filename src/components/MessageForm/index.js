@@ -56,7 +56,7 @@ class MessageForm extends React.Component {
 				</div>
 				<button
 					type="submit"
-					className={styles.messageForm__submitButton}
+					className={`${styles.messageForm__submitButton} ${this.props.isCreatingMessage ? 'disabled' : ''}`}
 				>
 					Send
 				</button>
