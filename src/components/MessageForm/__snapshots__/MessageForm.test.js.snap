@@ -8,23 +8,18 @@ exports[`MessageForm should match its snapshot 1`] = `
   <div
     className="messageForm__text"
   >
-    <label
-      htmlFor="messageForm__text__textarea"
-    >
-      Type in your message:
-    </label>
     <textarea
       className="messageForm__text__textarea"
-      cols="30"
       id="messageForm__text__textarea"
-      name=""
-      rows="10"
+      placeholder="Type in your message"
+      required={true}
     />
   </div>
   <div
     className="messageForm__private"
   >
     <label
+      className="messageForm__private__label"
       htmlFor="messageForm__private__input"
     >
       Private message:
@@ -36,7 +31,7 @@ exports[`MessageForm should match its snapshot 1`] = `
     />
   </div>
   <button
-    className="messageForm__submitButton"
+    className="messageForm__submitButton "
     type="submit"
   >
     Send
