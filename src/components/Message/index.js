@@ -9,15 +9,13 @@ const Message = ({ message }) => {
 
 	return (
 		<div className={styles.message}>
+			<span>{message.text}</span>
 			{
-				message.private
 				// If the message is private we show the default template message
-				?
-					<div className={`${styles.message__private} message__private`}>&#128274; This message was made private by the user.</div>
-				:
-					// Otherwise we show the text
-					<span>{message.text}</span>
+				(message.private)
+				&& <div className={`${styles.message__private} message__private`}>&#128274; Private message: Only you can see that.</div>
 			}
+			
 		</div>
 	);
 }
