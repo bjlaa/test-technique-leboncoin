@@ -9,10 +9,18 @@ configure({ adapter: new Adapter() });
 
 describe('Card', () => {
   it('should match its snapshot', () => {
-    expect(false).toBe(true);
+    const component = renderer.create(<Card />);
+
+    const tree = component.toJSON();
+
+    expect(tree).toMatchSnapshot();
   });
 
   it('should render its children', () => {
-    expect(false).toBe(true);
+    const child = <div id="child" />;
+
+    const component = shallow(<Card children={child} />);
+
+    expect(component.find('#child').length).toEqual(1);
   });
 });
