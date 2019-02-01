@@ -1,5 +1,8 @@
 import React from 'react';
+
 import styles from './MessageList.module.scss';
+
+import Message from '../Message';
 
 const MessageList = ({ messages }) => {
 	console.log(messages)
@@ -9,9 +12,7 @@ const MessageList = ({ messages }) => {
 		}
 
 		const messageNodes = messages.map((message) => {
-			return (
-				<div key={`${message.id}-${message.text}`}>test</div>
-			);
+			return <Message message={message} key={`${message.id}-${message.text}`} />;
 		});
 
 		return messageNodes;
