@@ -1,0 +1,12 @@
+@import '../../variables';
+
+.messageList {
+	width: 100%;
+	min-height: 50vh;
+}
+
+@media (min-width: $min-width-laptop) {
+	.messageList {
+		width: 50%;
+	}
+}
