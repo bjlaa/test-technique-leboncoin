@@ -41,7 +41,18 @@
     margin-top: 10px;
 	}
 }
-@media (min-width: $min-width-tablet) {
+
+
+
+@media (min-width: $min-width-tablet) and (max-width: $min-width-laptop) {
+  .messageForm {
+    margin-left: auto;
+    width: 70%;
+  }
+}
+
+// For tablets and above
+@media (min-width: $min-width-laptop) {
   .messageForm {
     width: 50%;
     align-self: flex-end;
