@@ -1,0 +1,44 @@
+.message {
+	background: red;
+	border-radius: 30px;
+	padding: 20px;
+	width: 50%;
+	position: relative;
+	&:nth-child(even) {
+		margin-left: auto;
+		background-color: rgba(255, 100, 10, 1);
+		color: white;
+		&:after {
+			content: ' ';
+			position: absolute;
+			bottom: 0;
+			left: 82%;
+			width: 0;
+			height: 0;
+			border: 10px solid transparent;
+			border-top-color: rgba(255, 100, 10, 1);
+			border-bottom: 0;
+			border-right: 0;
+			margin-left: -10px;
+			margin-bottom: -10px;
+		}
+	}
+	&:nth-child(odd) {
+		margin-right: auto;
+		background-color: rgba(0, 170, 187, 0.3);
+		&:after {
+			content: ' ';
+			position: absolute;
+			bottom: 0;
+			left: 24%;
+			width: 0;
+			height: 0;
+			border: 10px solid transparent;
+			border-top-color: rgba(0, 170, 187, 0.3);
+			border-bottom: 0;
+			border-left: 0;
+			margin-left: -10px;
+			margin-bottom: -10px;
+		}
+	}
+}
