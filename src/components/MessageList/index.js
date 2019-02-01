@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './MessageList.module.scss';
 
 const MessageList = ({ messages }) => {
+	console.log(messages)
 	const renderMessages = () => {
 		if (!messages) {
 			return null;
@@ -9,7 +10,7 @@ const MessageList = ({ messages }) => {
 
 		const messageNodes = messages.map((message) => {
 			return (
-				<div key={message.text}>test</div>
+				<div key={`${message.id}-${message.text}`}>test</div>
 			);
 		});
 

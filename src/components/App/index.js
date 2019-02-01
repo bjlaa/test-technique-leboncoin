@@ -33,7 +33,7 @@ class App extends Component {
           Test technique LeBonCoin
         </header>
         <Card>
-          <MessageList />
+          <MessageList messages={this.state.messages} />
         </Card>
       </div>
     );
