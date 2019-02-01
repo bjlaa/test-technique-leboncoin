@@ -3,6 +3,7 @@ import styles from './App.module.scss';
 
 import Card from '../Card';
 import MessageList from '../MessageList';
+import MessageForm from '../MessageForm';
 
 import SETTINGS from '../../settings';
 
@@ -26,6 +27,31 @@ class App extends Component {
     });
   };
 
+  createMessage = (message) => {
+    console.log("boje", message)
+    fetch(
+      SETTINGS.createMessageURL,
+      {
+        method: 'POST',
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(message)
+      }
+    )
+      .then((response) => {
+        if (response.ok) {
+          return response.text();
+        }
+
+        throw new Error('Error in App - createMessage(): error while fetching data');
+      })
+      .then(() => {
+        this.fetchMessages();
+      })
+  };
+
   render() {
     return (
       <div className={styles.app}>
@@ -34,6 +60,7 @@ class App extends Component {
         </header>
         <Card>
           <MessageList messages={this.state.messages} />
+          <MessageForm createMessage={this.createMessage} />
         </Card>
       </div>
     );

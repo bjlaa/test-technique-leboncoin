@@ -33,6 +33,7 @@ app.get("/api/messages", (req, res, next) => {
 
 // Create a new message and add it to the messages list
 app.post("/api/messages/create", (req, res) => {
+	console.log(req.body)
     const message = { 'id': messages.length, 'text': req.body.text, 'private': req.body.private};
 
     messages.push(message);
