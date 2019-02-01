@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import styles from './App.module.scss';
 
+import Card from '../Card';
+
 class App extends Component {
   render() {
     return (
@@ -8,6 +10,9 @@ class App extends Component {
         <header className={styles.app__header}>
           Test technique LeBonCoin
         </header>
+        <Card>
+          <div>test</div>
+        </Card>
       </div>
     );
   }
