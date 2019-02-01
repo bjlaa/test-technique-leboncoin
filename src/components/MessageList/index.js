@@ -12,6 +12,8 @@ const MessageList = ({ messages }) => {
 				<div key={message.text}>test</div>
 			);
 		});
+
+		return messageNodes;
 	};
 
 	return (

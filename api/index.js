@@ -1,6 +1,11 @@
 var express = require("express");
 var app = express();
 app.use(express.json());
+app.use(function(req, res, next) {
+	res.header("Access-Control-Allow-Origin", "*");
+	res.header("Access-Control-Allow-Headers", "Origin, x-Requested-With, Content-Type, Accept");
+	next();
+});
 
 // The message list where will be stored the messages
 // the user posts
