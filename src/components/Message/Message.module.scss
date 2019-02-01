@@ -1,9 +1,11 @@
 .message {
 	background: red;
-	border-radius: 30px;
-	padding: 20px;
+	border-radius: 10px;
+	padding: 10px;
 	width: 50%;
 	position: relative;
+	font-size: 10pt;
+	margin: 10px 0;
 	&:nth-child(even) {
 		margin-left: auto;
 		background-color: rgba(255, 100, 10, 1);

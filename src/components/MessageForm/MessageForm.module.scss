@@ -1,0 +1,58 @@
+@import '../../variables';
+
+.messageForm {
+	text-align: left;
+	&__text {
+		padding: 10px 0px;
+		&__textarea {
+			width: 100%;
+			min-height: 70px;
+			margin: 0 auto;
+			border: solid 1px lightgrey;
+			border-radius: 3px;
+			display: block;
+			font-size: 10pt;
+		}
+	}
+	&__private {
+		padding: 10px 0px;
+		text-align: right;
+		display: flex;
+		align-items: flex-end;
+		justify-content: flex-end;
+		font-size: 10pt;
+		&__label {
+			margin-right: 10px;
+		}
+		&__input {
+
+		}
+	}
+	&__submitButton {
+    background: #282c34;
+    border: none;
+    border-radius: 3px;
+    padding: 5px 10px;
+    font-size: 10pt;
+    color: white;
+    display: block;
+    margin-left: auto;
+    margin-top: 10px;
+	}
+}
+@media (min-width: $min-width-tablet) {
+  .messageForm {
+    width: 50%;
+    align-self: flex-end;
+		&__text {
+			align-items: flex-end;
+			&__textarea {
+				max-width: 80%;
+				margin-right: 0;
+			}
+		}
+		&__submitButton {
+
+		}
+  }
+}

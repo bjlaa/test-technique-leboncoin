@@ -32,20 +32,19 @@ class MessageForm extends React.Component {
 				onSubmit={this.handleSubmit}
 			>
 				<div className={styles.messageForm__text}>
-					<label htmlFor="messageForm__text__textarea">
-						Type in your message:
-					</label>
 					<textarea
 						className={styles.messageForm__text__textarea}
-						name=""
 						id="messageForm__text__textarea"
-						cols="30"
-						rows="10"
 						ref={this.textarea}
+						placeholder="Type in your message"
+						required
 					/>
 				</div>
 				<div className={styles.messageForm__private}>
-					<label htmlFor="messageForm__private__input">
+					<label
+						className={styles.messageForm__private__label}
+						htmlFor="messageForm__private__input"
+					>
 						Private message:
 					</label>
 					<input
