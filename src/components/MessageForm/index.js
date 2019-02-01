@@ -6,6 +6,7 @@ class MessageForm extends React.Component {
 	constructor(props) {
 		super(props);
 
+		// We create two refs: for the textarea and for the input
 		this.textarea = React.createRef();
 		this.privateCheckbox = React.createRef();
 	}
@@ -14,13 +15,16 @@ class MessageForm extends React.Component {
 	handleSubmit = (event) => {
 		event.preventDefault();
 
+		// We create our new message object
 		const newMessage = {
 			text: this.textarea.current.value,
 			private: this.privateCheckbox.current.checked
 		};
 
+		// And call the createMessage prop passing it newMessage
 		this.props.createMessage(newMessage);
 
+		// We reset the value of both the textarea and the input
 		this.textarea.current.value = '';
 		this.privateCheckbox.current.checked = false;
 	};

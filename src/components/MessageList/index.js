@@ -11,10 +11,14 @@ class MessageList extends React.Component {
 		this.list = React.createRef();
 	}
 
+	// When the component is updated, scroll to the bottom
+	// typically when a new message is created
 	componentDidUpdate() {
 		this.list.current.scrollTop = this.list.current.scrollHeight;
 	}
 
+	// Render method iterates over our this.props.messages array
+	// to create the Message components
 	renderMessages = () => {
 		if (!this.props.messages) {
 			return null;
