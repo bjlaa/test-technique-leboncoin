@@ -5,7 +5,6 @@ import styles from './MessageList.module.scss';
 import Message from '../Message';
 
 const MessageList = ({ messages }) => {
-	console.log(messages)
 	const renderMessages = () => {
 		if (!messages) {
 			return null;

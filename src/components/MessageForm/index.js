@@ -20,6 +20,9 @@ class MessageForm extends React.Component {
 		};
 
 		this.props.createMessage(newMessage);
+
+		this.textarea.current.value = '';
+		this.privateCheckbox.current.checked = false;
 	};
 
 	render() {

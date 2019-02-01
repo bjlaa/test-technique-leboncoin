@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MessageForm should match its snapshot 1`] = `
+<form
+  className="messageForm"
+  onSubmit={[Function]}
+>
+  <div
+    className="messageForm__text"
+  >
+    <label
+      htmlFor="messageForm__text__textarea"
+    >
+      Type in your message:
+    </label>
+    <textarea
+      className="messageForm__text__textarea"
+      cols="30"
+      id="messageForm__text__textarea"
+      name=""
+      rows="10"
+    />
+  </div>
+  <div
+    className="messageForm__private"
+  >
+    <label
+      htmlFor="messageForm__private__input"
+    >
+      Private message:
+    </label>
+    <input
+      className="messageForm__private__input"
+      id="messageForm__private__input"
+      type="checkbox"
+    />
+  </div>
+  <button
+    className="messageForm__submitButton"
+    type="submit"
+  >
+    Send
+  </button>
+</form>
+`;
