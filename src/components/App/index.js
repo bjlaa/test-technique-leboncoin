@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import styles from './App.module.scss';
 
 import Card from '../Card';
+import MessageList from '../MessageList';
 
 class App extends Component {
   render() {
@@ -11,7 +12,7 @@ class App extends Component {
           Test technique LeBonCoin
         </header>
         <Card>
-          <div>test</div>
+          <MessageList />
         </Card>
       </div>
     );

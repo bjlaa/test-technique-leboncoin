@@ -4,7 +4,18 @@ app.use(express.json());
 
 // The message list where will be stored the messages
 // the user posts
-var messages = [];
+var messages = [
+	{
+		id: 0,
+		text: 'This is a test',
+		private: false
+	},
+	{
+		id: 2,
+		text: 'This is a test',
+		private: false
+	}
+];
 
 app.listen(4000, () => {
  console.log("Server running on port 4000");
