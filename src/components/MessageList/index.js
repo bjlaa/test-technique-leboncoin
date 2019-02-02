@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import styles from './MessageList.module.scss';
 
@@ -44,6 +45,14 @@ class MessageList extends React.Component {
 			</div>
 		);		
 	}
+}
+
+MessageList.propTypes = {
+	messages: PropTypes.arrayOf(PropTypes.shape({
+		id: PropTypes.number,
+		text: PropTypes.string,
+		private: PropTypes.bool
+	}))
 };
 
 export default MessageList;
