@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import styles from './MessageForm.module.scss';
 
@@ -68,5 +69,9 @@ class MessageForm extends React.Component {
 		);
 	}
 }
+
+MessageForm.propTypes = {
+	createMessage: PropTypes.func
+};
 
 export default MessageForm;
